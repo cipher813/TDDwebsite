@@ -4,8 +4,8 @@ Description=Gunicorn server for SITENAME
 [Service]
 Restart=on-failure
 User=cipher813
-WorkingDirectory=/home/sites/SITENAME/source
-ExecStart=/home/sites/SITENAME/virtualenv/bin/gunicorn --bind unix:/tmp/SITENAME.socket superlists.wsgi:application
+WorkingDirectory=/home/cipher813/sites/SITENAME/source
+ExecStart=/home/cipher813/sites/SITENAME/virtualenv/bin/gunicorn --bind unix:/tmp/SITENAME.socket superlists.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
