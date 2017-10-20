@@ -76,11 +76,11 @@ class ItemValidationTest(FunctionalTest):
             self.get_error_element().is_displayed()
         ))
 
-        # THE BELOW FAILS EVEN THOUGH IT MATCHES AUTHOR CODE 
-        # # she starts typing in the input box to clear the error
-        # self.get_item_input_box().send_keys('a')
-        #
-        # # She is pleased to see that the error message disappears
+        # she starts typing in the input box to clear the error
+        self.get_item_input_box().send_keys('a')
+
+        # She is pleased to see that the error message disappears
+        # THE BELOW FAILS EVEN THOUGH IT MATCHES AUTHOR CODE
         # self.wait_for(lambda: self.assertFalse(
         #     self.get_error_element().is_displayed()
         # ))
