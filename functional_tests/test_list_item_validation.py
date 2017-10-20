@@ -81,6 +81,6 @@ class ItemValidationTest(FunctionalTest):
 
         # She is pleased to see that the error message disappears
         # THE BELOW FAILS EVEN THOUGH IT MATCHES AUTHOR CODE
-        # self.wait_for(lambda: self.assertFalse(
-        #     self.get_error_element().is_displayed()
-        # ))
+        self.wait_for(lambda: self.assertFalse(
+            self.get_error_element().is_displayed()
+        ))
