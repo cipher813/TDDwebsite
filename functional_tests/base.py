@@ -1,13 +1,12 @@
 import os
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import WebDriverException
-# from unittest import skip
 import time
-# import unittest
 
 MAX_WAIT = 10
+
+
 
 class FunctionalTest(StaticLiveServerTestCase):
 
@@ -16,6 +15,7 @@ class FunctionalTest(StaticLiveServerTestCase):
         staging_server = os.environ.get('STAGING_SERVER')
         if staging_server:
             self.live_server_url = 'http://' + staging_server
+
 
     def teardown(self):
         self.browser.quit()
@@ -31,6 +31,8 @@ class FunctionalTest(StaticLiveServerTestCase):
                     raise e
                 time.sleep(0.5)
 
+
+
     def wait_for_row_in_list_table(self, row_text):
         start_time = time.time()
         while True:
@@ -43,6 +45,7 @@ class FunctionalTest(StaticLiveServerTestCase):
                 if time.time() - start_time > MAX_WAIT:
                     raise e
                 time.sleep(0.5)
+
 
     def get_item_input_box(self):
         return self.browser.find_element_by_id('id_text')
